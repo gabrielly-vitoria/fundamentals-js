@@ -1,26 +1,28 @@
-// styles.tsx
+// components/button/styles.tsx
+
+// importei o styled do styled-components para criar estilos dentro do JS
 import styled from 'styled-components';
 
-export const Button = styled.button`
-  background-color: #7f3fbf; /* Cor de fundo roxa */
-  border: none; /* Sem borda */
-  color: white; /* Cor do texto */
-  padding: 15px 32px; /* Espaçamento interno */
-  text-align: center; /* Alinhar texto */
-  text-decoration: none; /* Sem sublinhado */
-  display: inline-block; /* Exibe como bloco em linha */
-  font-size: 16px; /* Tamanho da fonte */
-  margin: 4px 2px; /* Espaçamento externo */
-  cursor: pointer; /* Cursor de mão */
-  border-radius: 30px; /* Cantos arredondados */
-  transition: background-color 0.3s, transform 0.1s ease; /* Transições suaves */
+// criei o StyledButton, que é um botão estilizado com estilos CSS dentro de um template string
+export const StyledButton = styled.button`
+  width: 100%;              // botão vai ocupar 100% da largura do pai
+  padding: 0.8rem;          // espaçamento interno do botão, em cima/baixo e esquerda/direita
+  background-color: #7f3fbf; // cor de fundo roxa do botão
+  color: white;             // cor do texto branca
+  border: none;             // tira a borda padrão do botão
+  border-radius: 4px;       // cantos arredondados do botão, com raio de 4 pixels
+  margin-bottom: 1rem;      // distância para baixo, para separar de outros elementos
+  cursor: pointer;          // muda o cursor para a mãozinha quando passa por cima
+  transition: background-color 0.3s, transform 0.1s ease; // animação suave para mudar cor e tamanho
 
-  &:hover {
-    background-color: #6a2e9c; /* Cor de fundo ao passar o mouse */
+  &:hover {                 // quando passar o mouse em cima (hover)
+    background-color: #6a2e9c; // muda para um roxo mais escuro
   }
 
-  &:active {
-    transform: scale(0.95); /* Animação de pressionamento (botão fica menor) */
-    background-color: #4b1b72; /* Cor de fundo ao clicar */
+  &:active {                // quando clicar e segurar o botão (ativo)
+    transform: scale(0.95); // botão fica um pouco menor (95% do tamanho)
+    background-color: #4b1b72; // cor roxa ainda mais escura para mostrar que está clicado
   }
 `;
+
+// O & representa o próprio elemento que você está estilizando, então ao invés de repetir o nome do componente ou seletor, você usa o & para indicar “aqui é ele mesmo”.
